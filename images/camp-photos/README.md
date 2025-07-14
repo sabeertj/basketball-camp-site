@@ -1,0 +1,1 @@
+Camp photos go here
