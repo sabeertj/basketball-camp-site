@@ -14,7 +14,8 @@
         body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: #183153;
+            background: #e3f0ff;
         }
 
         .container {
@@ -24,26 +25,31 @@
         }
 
         header {
-            background: linear-gradient(135deg, #ff6b35, #f7931e);
-            color: white;
-            padding: 2rem 0;
+            background: linear-gradient(135deg, #4da3ff 60%, #ffe066 100%);
+            color: #183153;
+            padding: 2.5rem 0 2rem 0;
             text-align: center;
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+            box-shadow: 0 4px 24px rgba(77,163,255,0.10);
         }
 
         header h1 {
-            font-size: 3rem;
+            font-size: 3.2rem;
             margin-bottom: 0.5rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 2px 2px 8px rgba(77,163,255,0.10);
+            letter-spacing: 2px;
         }
 
         header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
+            font-size: 1.3rem;
+            opacity: 0.95;
         }
 
         nav {
-            background: #333;
+            background: #1976d2;
             padding: 1rem 0;
+            box-shadow: 0 2px 8px rgba(25,118,210,0.08);
         }
 
         nav ul {
@@ -58,19 +64,21 @@
         }
 
         nav a {
-            color: white;
+            color: #fff;
             text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            transition: background 0.3s;
+            padding: 0.5rem 1.2rem;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: background 0.3s, color 0.3s;
         }
 
         nav a:hover {
-            background: #ff6b35;
+            background: #ffe066;
+            color: #1976d2;
         }
 
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/backgrounds/hero-background.jpg');
+            background: linear-gradient(rgba(77,163,255,0.7), rgba(255,224,102,0.5)), url('images/backgrounds/hero-background.jpg');
             background-size: cover;
             background-position: center;
             height: 400px;
@@ -78,16 +86,20 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: white;
+            color: #183153;
+            border-radius: 0 0 40px 40px;
+            box-shadow: 0 8px 32px rgba(77,163,255,0.10);
         }
 
         .hero-fallback {
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23228B22" width="1200" height="600"/><circle fill="%23FF6B35" cx="600" cy="300" r="100"/></svg>');
+            background: linear-gradient(rgba(77,163,255,0.7), rgba(255,224,102,0.5)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23e3f0ff" width="1200" height="600"/><circle fill="%234da3ff" cx="600" cy="300" r="100"/></svg>');
         }
 
         .hero-content h2 {
-            font-size: 2.5rem;
+            font-size: 2.7rem;
             margin-bottom: 1rem;
+            color: #1976d2;
+            text-shadow: 1px 1px 8px #e3f0ff;
         }
 
         .hero-content p {
@@ -96,21 +108,23 @@
         }
 
         .cta-button {
-            background: #ff6b35;
-            color: white;
-            padding: 1rem 2rem;
+            background: linear-gradient(90deg, #4da3ff 60%, #ffe066 100%);
+            color: #183153;
+            padding: 1rem 2.2rem;
             text-decoration: none;
             border-radius: 50px;
             font-size: 1.1rem;
             font-weight: bold;
             transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+            box-shadow: 0 4px 15px rgba(77,163,255,0.15);
+            border: none;
         }
 
         .cta-button:hover {
-            background: #e55a2b;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+            background: #ffd600;
+            color: #1976d2;
+            transform: translateY(-2px) scale(1.04);
+            box-shadow: 0 6px 20px rgba(255, 224, 102, 0.25);
         }
 
         .section {
@@ -121,11 +135,11 @@
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 2rem;
-            color: #333;
+            color: #1976d2;
         }
 
         .section-alt {
-            background: #f8f9fa;
+            background: #f7fbff;
         }
 
         .info-grid {
@@ -136,35 +150,44 @@
         }
 
         .info-card {
-            background: white;
+            background: #fff;
             padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 16px;
+            box-shadow: 0 5px 24px rgba(77,163,255,0.08);
             text-align: center;
+            border: 2px solid #e3f0ff;
+            transition: box-shadow 0.3s, border 0.3s;
+        }
+
+        .info-card:hover {
+            box-shadow: 0 8px 32px rgba(77,163,255,0.18);
+            border: 2px solid #4da3ff;
         }
 
         .info-card h3 {
-            color: #ff6b35;
+            color: #ffd600;
             margin-bottom: 1rem;
         }
 
         .photo-gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
+            gap: 1.5rem;
             margin-top: 2rem;
         }
 
         .photo-item {
             position: relative;
             overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            border-radius: 14px;
+            box-shadow: 0 5px 15px rgba(77,163,255,0.10);
+            transition: transform 0.3s, box-shadow 0.3s;
+            background: #fff;
         }
 
         .photo-item:hover {
             transform: scale(1.05);
+            box-shadow: 0 8px 32px rgba(77,163,255,0.18);
         }
 
         .photo-item img {
@@ -179,26 +202,29 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(transparent, rgba(0,0,0,0.8));
-            color: white;
+            background: linear-gradient(transparent, rgba(25,118,210,0.85));
+            color: #ffe066;
             padding: 1rem;
             text-align: center;
+            font-weight: 500;
         }
 
         .photo-placeholder {
-            background: #ddd;
+            background: #e3f0ff;
             height: 250px;
-            border-radius: 10px;
+            border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #666;
+            color: #1976d2;
             font-size: 1.1rem;
-            transition: transform 0.3s;
+            border: 2px dashed #4da3ff;
+            transition: transform 0.3s, border 0.3s;
         }
 
         .photo-placeholder:hover {
             transform: scale(1.05);
+            border: 2px solid #ffd600;
         }
 
         .video-grid {
@@ -209,10 +235,10 @@
         }
 
         .video-item {
-            background: white;
-            border-radius: 10px;
+            background: #fff;
+            border-radius: 14px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(77,163,255,0.10);
         }
 
         .video-item iframe {
@@ -224,32 +250,36 @@
         .video-title {
             padding: 1rem;
             text-align: center;
-            background: white;
+            background: #f7fbff;
             font-weight: bold;
-            color: #333;
+            color: #1976d2;
         }
 
         .video-placeholder {
-            background: #000;
+            background: #e3f0ff;
             height: 250px;
-            border-radius: 10px;
+            border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: #1976d2;
             font-size: 1.1rem;
             text-align: center;
+            border: 2px dashed #4da3ff;
         }
 
         .fundraising-section {
-            background: linear-gradient(135deg, #4CAF50, #45a049);
-            color: white;
+            background: linear-gradient(135deg, #4da3ff 60%, #ffe066 100%);
+            color: #183153;
             text-align: center;
             padding: 4rem 0;
+            border-radius: 40px;
+            margin: 3rem 0 2rem 0;
+            box-shadow: 0 8px 32px rgba(77,163,255,0.10);
         }
 
         .fundraising-section h2 {
-            color: white;
+            color: #1976d2;
             margin-bottom: 1rem;
         }
 
@@ -259,27 +289,33 @@
         }
 
         .donate-button {
-            background: white;
-            color: #4CAF50;
+            background: #ffd600;
+            color: #183153;
             padding: 1.2rem 2.5rem;
             text-decoration: none;
             border-radius: 50px;
             font-size: 1.2rem;
             font-weight: bold;
             transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 15px rgba(255,214,0,0.15);
+            border: none;
         }
 
         .donate-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            background: #ffe066;
+            color: #1976d2;
+            transform: translateY(-2px) scale(1.04);
+            box-shadow: 0 6px 20px rgba(255,224,102,0.25);
         }
 
         footer {
-            background: #333;
-            color: white;
+            background: #1976d2;
+            color: #fff;
             text-align: center;
             padding: 2rem 0;
+            border-top-left-radius: 40px;
+            border-top-right-radius: 40px;
+            box-shadow: 0 -4px 24px rgba(77,163,255,0.10);
         }
 
         .contact-info {
@@ -294,24 +330,19 @@
             header h1 {
                 font-size: 2rem;
             }
-            
             nav ul {
                 flex-direction: column;
                 align-items: center;
             }
-            
             nav li {
                 margin: 0.5rem 0;
             }
-            
             .hero-content h2 {
                 font-size: 2rem;
             }
-            
             .section h2 {
                 font-size: 2rem;
             }
-            
             .video-grid {
                 grid-template-columns: 1fr;
             }
@@ -378,24 +409,196 @@
         <div class="container">
             <h2>Camp Photos</h2>
             <p style="text-align: center; margin-bottom: 2rem;">Check out highlights from our previous camps!</p>
-            <div class="photo-gallery">
-                <!-- Replace these placeholders with actual photos -->
-                <!-- Example of how to add a real photo:
-                <div class="photo-item">
-                    <img src="images/camp-photos/action-shot-1.jpg" alt="Camp Action Shot">
-                    <div class="photo-caption">Intense scrimmage action</div>
+            <div class="carousel-wrapper">
+                <div class="carousel" id="photo-carousel">
+                    <div class="carousel-slide active">
+                        <img src="images/camp-photos/action-shot-1.jpg" alt="Camp Action Shot">
+                        <div class="photo-caption">Intense scrimmage action</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="images/camp-photos/team-practice.jpg" alt="Team Practice">
+                        <div class="photo-caption">Team Practice</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="photo-placeholder">📸 Skills Training<br><small>Replace with: images/camp-photos/skills-training.jpg</small></div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="photo-placeholder">📸 Awards Ceremony<br><small>Replace with: images/camp-photos/awards-ceremony.jpg</small></div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="photo-placeholder">📸 Group Photo<br><small>Replace with: images/camp-photos/group-photo.jpg</small></div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="photo-placeholder">📸 Fun Activities<br><small>Replace with: images/camp-photos/fun-activities.jpg</small></div>
+                    </div>
                 </div>
-                -->
-                
-                <small><div class="photo-item"><img src="images/camp-photos/action-shot-1.jpg" alt="Camp Action Shot"><div class="photo-caption">Intense scrimmage action</div></div></small>
-                <small><div class="photo-item"><img src="images/camp-photos/team-practice.jpg" alt="Camp Action Shot"><div class="photo-caption">Team Practice</div></div></small>
-                <div class="photo-placeholder">📸 Skills Training<br><small>Replace with: images/camp-photos/skills-training.jpg</small></div>
-                <div class="photo-placeholder">📸 Awards Ceremony<br><small>Replace with: images/camp-photos/awards-ceremony.jpg</small></div>
-                <div class="photo-placeholder">📸 Group Photo<br><small>Replace with: images/camp-photos/group-photo.jpg</small></div>
-                <div class="photo-placeholder">📸 Fun Activities<br><small>Replace with: images/camp-photos/fun-activities.jpg</small></div>
+                <button class="carousel-arrow left" id="carousel-prev" aria-label="Previous photo">&#8592;</button>
+                <button class="carousel-arrow right" id="carousel-next" aria-label="Next photo">&#8594;</button>
+                <div class="carousel-dots" id="carousel-dots"></div>
             </div>
         </div>
     </section>
+    <script>
+    // Simple Carousel Logic
+    const slides = document.querySelectorAll('.carousel-slide');
+    const prevBtn = document.getElementById('carousel-prev');
+    const nextBtn = document.getElementById('carousel-next');
+    const dotsContainer = document.getElementById('carousel-dots');
+    let currentSlide = 0;
+    let autoSlideInterval;
+
+    function showSlide(idx) {
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === idx);
+            slide.classList.toggle('prev', i === (idx - 1 + slides.length) % slides.length);
+            slide.classList.toggle('next', i === (idx + 1) % slides.length);
+        });
+        Array.from(dotsContainer.children).forEach((dot, i) => {
+            dot.classList.toggle('active', i === idx);
+        });
+        currentSlide = idx;
+    }
+
+    function nextSlide() {
+        showSlide((currentSlide + 1) % slides.length);
+    }
+    function prevSlide() {
+        showSlide((currentSlide - 1 + slides.length) % slides.length);
+    }
+
+    function startAutoSlide() {
+        autoSlideInterval = setInterval(nextSlide, 4000);
+    }
+    function stopAutoSlide() {
+        clearInterval(autoSlideInterval);
+    }
+
+    // Dots
+    slides.forEach((_, i) => {
+        const dot = document.createElement('span');
+        dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+        dot.addEventListener('click', () => {
+            showSlide(i);
+            stopAutoSlide();
+            startAutoSlide();
+        });
+        dotsContainer.appendChild(dot);
+    });
+
+    prevBtn.addEventListener('click', () => {
+        prevSlide();
+        stopAutoSlide();
+        startAutoSlide();
+    });
+    nextBtn.addEventListener('click', () => {
+        nextSlide();
+        stopAutoSlide();
+        startAutoSlide();
+    });
+
+    showSlide(0);
+    startAutoSlide();
+    </script>
+    <style>
+    .carousel-wrapper {
+        position: relative;
+        max-width: 700px;
+        margin: 0 auto 2rem auto;
+        overflow: hidden;
+        border-radius: 18px;
+        box-shadow: 0 6px 32px rgba(77,163,255,0.13);
+        background: #fff;
+    }
+    .carousel {
+        display: flex;
+        transition: transform 0.7s cubic-bezier(.77,0,.18,1);
+        position: relative;
+        height: 320px;
+    }
+    .carousel-slide {
+        min-width: 100%;
+        opacity: 0;
+        transform: translateX(100%);
+        transition: opacity 0.5s, transform 0.7s cubic-bezier(.77,0,.18,1);
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .carousel-slide.active {
+        opacity: 1;
+        transform: translateX(0);
+        position: relative;
+        z-index: 2;
+    }
+    .carousel-slide.prev {
+        opacity: 0;
+        transform: translateX(-100%);
+        z-index: 1;
+    }
+    .carousel-slide.next {
+        opacity: 0;
+        transform: translateX(100%);
+        z-index: 1;
+    }
+    .carousel-slide img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 14px;
+        box-shadow: 0 2px 12px rgba(77,163,255,0.10);
+    }
+    .carousel-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #ffe066;
+        color: #1976d2;
+        border: none;
+        border-radius: 50%;
+        width: 44px;
+        height: 44px;
+        font-size: 2rem;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(77,163,255,0.10);
+        transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+        z-index: 10;
+    }
+    .carousel-arrow.left { left: 16px; }
+    .carousel-arrow.right { right: 16px; }
+    .carousel-arrow:hover {
+        background: #4da3ff;
+        color: #fff;
+        box-shadow: 0 4px 16px rgba(77,163,255,0.18);
+    }
+    .carousel-dots {
+        display: flex;
+        justify-content: center;
+        margin: 1rem 0 0 0;
+        gap: 0.5rem;
+    }
+    .carousel-dot {
+        width: 12px;
+        height: 12px;
+        background: #e3f0ff;
+        border-radius: 50%;
+        display: inline-block;
+        cursor: pointer;
+        border: 2px solid #4da3ff;
+        transition: background 0.2s, border 0.2s;
+    }
+    .carousel-dot.active {
+        background: #ffd600;
+        border: 2px solid #ffd600;
+    }
+    @media (max-width: 800px) {
+        .carousel-wrapper { max-width: 98vw; }
+        .carousel { height: 220px; }
+        .carousel-slide img { height: 150px; }
+    }
+    </style>
 
     <section class="section" id="videos">
         <div class="container">
