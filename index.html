@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Basketball Camp 2024</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        nav {
+            background: #333;
+            padding: 1rem 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav li {
+            margin: 0 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background: #ff6b35;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/backgrounds/hero-background.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-fallback {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23228B22" width="1200" height="600"/><circle fill="%23FF6B35" cx="600" cy="300" r="100"/></svg>');
+        }
+
+        .hero-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            background: #ff6b35;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+        }
+
+        .cta-button:hover {
+            background: #e55a2b;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+        .section-alt {
+            background: #f8f9fa;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .info-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .info-card h3 {
+            color: #ff6b35;
+            margin-bottom: 1rem;
+        }
+
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .photo-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .photo-item:hover {
+            transform: scale(1.05);
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .photo-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .photo-placeholder {
+            background: #ddd;
+            height: 250px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 1.1rem;
+            transition: transform 0.3s;
+        }
+
+        .photo-placeholder:hover {
+            transform: scale(1.05);
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .video-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .video-item iframe {
+            width: 100%;
+            height: 250px;
+            border: none;
+        }
+
+        .video-title {
+            padding: 1rem;
+            text-align: center;
+            background: white;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .video-placeholder {
+            background: #000;
+            height: 250px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+
+        .fundraising-section {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .fundraising-section h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .fundraising-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .donate-button {
+            background: white;
+            color: #4CAF50;
+            padding: 1.2rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .donate-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .contact-info {
+            margin-top: 1rem;
+        }
+
+        .contact-info p {
+            margin: 0.5rem 0;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 0.5rem 0;
+            }
+            
+            .hero-content h2 {
+                font-size: 2rem;
+            }
+            
+            .section h2 {
+                font-size: 2rem;
+            }
+            
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🏀 Elite Basketball Camp</h1>
+            <p>Building Champions On and Off the Court</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#photos">Photos</a></li>
+                <li><a href="#videos">Videos</a></li>
+                <li><a href="#support">Support Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero hero-fallback" id="home">
+        <div class="hero-content">
+            <h2>Summer 2024 Basketball Camp</h2>
+            <p>Join us for an unforgettable basketball experience</p>
+            <a href="#about" class="cta-button">Learn More</a>
+        </div>
+    </section>
+
+    <section class="section" id="about">
+        <div class="container">
+            <h2>About Our Camp</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>🏆 Expert Coaching</h3>
+                    <p>Learn from experienced coaches and former college players who are passionate about developing young talent.</p>
+                </div>
+                <div class="info-card">
+                    <h3>🎯 Skill Development</h3>
+                    <p>Focus on fundamental skills including shooting, dribbling, passing, and defensive techniques.</p>
+                </div>
+                <div class="info-card">
+                    <h3>🤝 Team Building</h3>
+                    <p>Build lasting friendships while learning the importance of teamwork and sportsmanship.</p>
+                </div>
+                <div class="info-card">
+                    <h3>📅 Camp Details</h3>
+                    <p><strong>Ages:</strong> 8-16 years old<br>
+                    <strong>Duration:</strong> 5 days<br>
+                    <strong>Time:</strong> 9:00 AM - 3:00 PM<br>
+                    <strong>Location:</strong> Local High School Gym</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-alt" id="photos">
+        <div class="container">
+            <h2>Camp Photos</h2>
+            <p style="text-align: center; margin-bottom: 2rem;">Check out highlights from our previous camps!</p>
+            <div class="photo-gallery">
+                <!-- Replace these placeholders with actual photos -->
+                <!-- Example of how to add a real photo:
+                <div class="photo-item">
+                    <img src="images/camp-photos/action-shot-1.jpg" alt="Camp Action Shot">
+                    <div class="photo-caption">Intense scrimmage action</div>
+                </div>
+                -->
+                
+                <div class="photo-placeholder">📸 Camp Action Shot 1<br><small>Replace with: images/camp-photos/action-shot-1.jpg</small></div>
+                <div class="photo-placeholder">📸 Team Practice<br><small>Replace with: images/camp-photos/team-practice.jpg</small></div>
+                <div class="photo-placeholder">📸 Skills Training<br><small>Replace with: images/camp-photos/skills-training.jpg</small></div>
+                <div class="photo-placeholder">📸 Awards Ceremony<br><small>Replace with: images/camp-photos/awards-ceremony.jpg</small></div>
+                <div class="photo-placeholder">📸 Group Photo<br><small>Replace with: images/camp-photos/group-photo.jpg</small></div>
+                <div class="photo-placeholder">📸 Fun Activities<br><small>Replace with: images/camp-photos/fun-activities.jpg</small></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="videos">
+        <div class="container">
+            <h2>Camp Videos</h2>
+            <p style="text-align: center; margin-bottom: 2rem;">Watch our campers in action!</p>
+            <div class="video-grid">
+                <!-- Replace these placeholders with actual YouTube videos -->
+                <!-- Example of how to add a real video:
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe>
+                    <div class="video-title">Camp Highlight Reel</div>
+                </div>
+                -->
+                
+                <div class="video-placeholder">
+                    🎥 Camp Highlight Reel<br>
+                    <small>Replace with YouTube embed:<br>
+                    https://www.youtube.com/embed/YOUR_VIDEO_ID</small>
+                </div>
+                <div class="video-placeholder">
+                    🎥 Skills Training Session<br>
+                    <small>Replace with YouTube embed:<br>
+                    https://www.youtube.com/embed/YOUR_VIDEO_ID</small>
+                </div>
+                <div class="video-placeholder">
+                    🎥 Player Testimonials<br>
+                    <small>Replace with YouTube embed:<br>
+                    https://www.youtube.com/embed/YOUR_VIDEO_ID</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="fundraising-section" id="support">
+        <div class="container">
+            <h2>Support Our Program</h2>
+            <p>Help us provide basketball opportunities for young athletes in our community. Your donation makes a difference!</p>
+            <!-- UPDATE THIS LINK with your actual UCSF fundraising page -->
+            <a href="https://giving.ucsf.edu/fund/your-specific-fund-link" class="donate-button" target="_blank">
+                Donate Now via UCSF
+            </a>
+            <p style="margin-top: 2rem; opacity: 0.9;">
+                All donations are tax-deductible and go directly to supporting our youth basketball programs.
+            </p>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <h3>Contact Us</h3>
+            <div class="contact-info">
+                <p>📧 Email: info@basketballcamp.com</p>
+                <p>📞 Phone: (555) 123-4567</p>
+                <p>📍 Location: Your City, State</p>
+            </div>
+            <p style="margin-top: 2rem; opacity: 0.7;">
+                © 2024 Elite Basketball Camp. All rights reserved.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
