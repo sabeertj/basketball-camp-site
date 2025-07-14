@@ -4,318 +4,512 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elite Basketball Camp 2024</title>
-    <!-- Google Fonts: Montserrat -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Inter (modern, clean font) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+        
         body {
-            font-family: 'Montserrat', Arial, sans-serif;
-            line-height: 1.7;
-            color: #1a2233;
-            background: #f4f8fb;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #0f172a;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            overflow-x: hidden;
         }
+        
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
+        
+        /* Modern Header */
         header {
-            background: linear-gradient(rgba(30,41,59,0.7), rgba(30,41,59,0.7)), url('https://static.vecteezy.com/system/resources/previews/024/553/073/large_2x/basketball-court-background-3d-illustration-generative-ai-free-photo.jpg');
+            background: linear-gradient(135deg, rgba(15,23,42,0.95) 0%, rgba(30,41,59,0.95) 100%), 
+                        url('https://static.vecteezy.com/system/resources/previews/024/553/073/large_2x/basketball-court-background-3d-illustration-generative-ai-free-photo.jpg');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
             color: #fff;
-            padding: 3.5rem 0 2.5rem 0;
+            padding: 4rem 0 3rem 0;
             text-align: center;
-            border-bottom-left-radius: 40px;
-            border-bottom-right-radius: 40px;
-            box-shadow: 0 4px 32px rgba(30,41,59,0.13);
+            position: relative;
+            overflow: hidden;
         }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255,179,0,0.1) 0%, transparent 50%, rgba(255,179,0,0.1) 100%);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+        
+        @keyframes shimmer {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.7; }
+        }
+        
+        header .container {
+            position: relative;
+            z-index: 2;
+        }
+        
         header h1 {
-            font-size: 3.2rem;
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-shadow: 0 4px 24px rgba(30,41,59,0.25);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #fff 0%, #fbbf24 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s ease-out;
         }
+        
         header p {
-            font-size: 1.3rem;
-            opacity: 0.95;
-            font-weight: 500;
+            font-size: 1.25rem;
+            opacity: 0.9;
+            font-weight: 400;
+            max-width: 600px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease-out 0.2s both;
         }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Modern Navigation */
         nav {
-            background: #1a2233;
+            background: rgba(15,23,42,0.98);
+            backdrop-filter: blur(20px);
             padding: 1rem 0;
-            box-shadow: 0 2px 8px rgba(30,41,59,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
+        
         nav ul {
             list-style: none;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
+            gap: 0.5rem;
         }
-        nav li {
-            margin: 0 1.2rem;
-        }
+        
         nav a {
             color: #fff;
             text-decoration: none;
-            padding: 0.5rem 1.2rem;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 1.08rem;
-            letter-spacing: 0.5px;
-            transition: background 0.3s, color 0.3s;
-        }
-        nav a:hover {
-            background: #ffb300;
-            color: #1a2233;
-        }
-        .hero {
-            background: linear-gradient(rgba(30,41,59,0.6), rgba(255,179,0,0.2)), url('https://static.vecteezy.com/system/resources/previews/024/553/073/large_2x/basketball-court-background-3d-illustration-generative-ai-free-photo.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #fff;
-            border-radius: 0 0 40px 40px;
-            box-shadow: 0 8px 32px rgba(30,41,59,0.10);
-        }
-        .hero-content h2 {
-            font-size: 2.7rem;
-            margin-bottom: 1rem;
-            color: #ffb300;
-            text-shadow: 1px 1px 12px #1a2233;
-            font-weight: 700;
-        }
-        .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 12px;
             font-weight: 500;
-        }
-        .cta-button {
-            background: #111;
-            color: #fff;
-            padding: 1rem 2.2rem;
-            text-decoration: none;
-            border-radius: 50px;
-            font-size: 1.15rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(30,41,59,0.15);
-            border: none;
-        }
-        .cta-button:hover {
-            background: #ffb300;
-            color: #1a2233;
-            transform: translateY(-2px) scale(1.04);
-            box-shadow: 0 6px 20px rgba(255,179,0,0.25);
-        }
-        .section {
-            padding: 4rem 0;
-        }
-        .section h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: #1a2233;
-            font-weight: 700;
-        }
-        .section-alt {
-            background: #f9fafb;
-        }
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        .info-card {
-            background: #fff;
-            padding: 2rem;
-            border-radius: 18px;
-            box-shadow: 0 5px 24px rgba(30,41,59,0.08);
-            text-align: center;
-            border: 2px solid #f4f8fb;
-            transition: box-shadow 0.3s, border 0.3s;
-        }
-        .info-card:hover {
-            box-shadow: 0 8px 32px rgba(255,179,0,0.18);
-            border: 2px solid #ffb300;
-        }
-        .info-card h3 {
-            color: #ffb300;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-        .photo-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        .photo-item {
+            font-size: 0.95rem;
+            letter-spacing: 0.025em;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
-            border-radius: 14px;
-            box-shadow: 0 5px 15px rgba(77,163,255,0.10);
-            transition: transform 0.3s, box-shadow 0.3s;
-            background: #fff;
         }
-        .photo-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 32px rgba(77,163,255,0.18);
-        }
-        .photo-item img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            display: block;
-        }
-        .photo-caption {
+        
+        nav a::before {
+            content: '';
             position: absolute;
-            bottom: 0;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,179,0,0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        nav a:hover::before {
+            left: 100%;
+        }
+        
+        nav a:hover {
+            background: rgba(255,179,0,0.1);
+            color: #fbbf24;
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(15,23,42,0.8) 0%, rgba(30,41,59,0.8) 100%),
+                        url('https://static.vecteezy.com/system/resources/previews/024/553/073/large_2x/basketball-court-background-3d-illustration-generative-ai-free-photo.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(transparent, rgba(30,41,59,0.85));
-            color: #ffb300;
-            padding: 1rem;
-            text-align: center;
-            font-weight: 600;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(255,179,0,0.1) 0%, transparent 70%);
         }
-        .photo-placeholder {
-            background: #f4f8fb;
-            height: 250px;
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #1a2233;
-            font-size: 1.1rem;
-            border: 2px dashed #ffb300;
-            transition: transform 0.3s, border 0.3s;
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 2rem;
         }
-        .photo-placeholder:hover {
-            transform: scale(1.05);
-            border: 2px solid #1a2233;
+        
+        .hero-content h2 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s ease-out 0.3s both;
         }
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+        
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 3rem;
+            color: rgba(255,255,255,0.9);
+            font-weight: 400;
+            line-height: 1.7;
+            animation: fadeInUp 1s ease-out 0.4s both;
         }
-        .video-item {
-            background: #fff;
-            border-radius: 14px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(77,163,255,0.10);
-        }
-        .video-item iframe {
-            width: 100%;
-            height: 250px;
-            border: none;
-        }
-        .video-title {
-            padding: 1rem;
-            text-align: center;
-            background: #f7fbff;
-            font-weight: bold;
-            color: #1976d2;
-        }
-        .video-placeholder {
-            background: #e3f0ff;
-            height: 250px;
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #1976d2;
-            font-size: 1.1rem;
-            text-align: center;
-            border: 2px dashed #4da3ff;
-        }
-        .fundraising-section {
-            background: linear-gradient(135deg, #1a2233 60%, #ffb300 100%);
+        
+        /* Modern CTA Button */
+        .cta-button {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: #fff;
-            text-align: center;
-            padding: 4rem 0;
-            border-radius: 40px;
-            margin: 3rem 0 2rem 0;
-            box-shadow: 0 8px 32px rgba(30,41,59,0.10);
-        }
-        .fundraising-section h2 {
-            color: #ffb300;
-            margin-bottom: 1rem;
-        }
-        .fundraising-section p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
-        .donate-button {
-            background: #ffb300;
-            color: #1a2233;
-            padding: 1.2rem 2.5rem;
+            padding: 1.25rem 3rem;
             text-decoration: none;
             border-radius: 50px;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.025em;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 30px rgba(15,23,42,0.3);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            animation: fadeInUp 1s ease-out 0.5s both;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,179,0,0.2), transparent);
+            transition: left 0.6s;
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        
+        .cta-button:hover {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            color: #0f172a;
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(251,191,36,0.4);
+            border-color: #fbbf24;
+        }
+        
+        /* Section Styling */
+        .section {
+            padding: 6rem 0;
+            position: relative;
+        }
+        
+        .section h2 {
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 3rem;
+            color: #0f172a;
             font-weight: 700;
-            transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(255,214,0,0.15);
+            letter-spacing: -0.02em;
+            position: relative;
+        }
+        
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #fbbf24, #f59e0b);
+            border-radius: 2px;
+        }
+        
+        .section-alt {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        }
+        
+        /* Info Cards */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+        
+        .info-card {
+            background: #fff;
+            padding: 3rem 2rem;
+            border-radius: 24px;
+            box-shadow: 0 4px 20px rgba(15,23,42,0.08);
+            text-align: center;
+            border: 1px solid rgba(15,23,42,0.05);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .info-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #fbbf24, #f59e0b);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .info-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .info-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(15,23,42,0.15);
+            border-color: rgba(251,191,36,0.3);
+        }
+        
+        .info-card h3 {
+            color: #fbbf24;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        
+        .info-card p {
+            color: #475569;
+            line-height: 1.7;
+            font-weight: 400;
+        }
+        
+        /* Carousel Enhancements */
+        .carousel-wrapper {
+            background: #fff;
+            border-radius: 24px;
+            box-shadow: 0 10px 40px rgba(15,23,42,0.1);
+            overflow: hidden;
+        }
+        
+        .carousel-arrow {
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            color: #0f172a;
             border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(251,191,36,0.3);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .donate-button:hover {
-            background: #1a2233;
+        
+        .carousel-arrow:hover {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
             color: #fff;
-            transform: translateY(-2px) scale(1.04);
-            box-shadow: 0 6px 20px rgba(255,224,102,0.25);
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(15,23,42,0.4);
         }
-        footer {
-            background: #1a2233;
+        
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            background: #e2e8f0;
+            border-radius: 50%;
+            border: 2px solid #fbbf24;
+            transition: all 0.3s ease;
+        }
+        
+        .carousel-dot.active {
+            background: #fbbf24;
+            transform: scale(1.2);
+        }
+        
+        /* Fundraising Section */
+        .fundraising-section {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: #fff;
             text-align: center;
-            padding: 2rem 0;
+            padding: 6rem 0;
+            border-radius: 40px;
+            margin: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .fundraising-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 70%, rgba(251,191,36,0.1) 0%, transparent 50%);
+        }
+        
+        .fundraising-section .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .fundraising-section h2 {
+            color: #fbbf24;
+            margin-bottom: 1.5rem;
+        }
+        
+        .fundraising-section h2::after {
+            background: linear-gradient(90deg, #fbbf24, #f59e0b);
+        }
+        
+        .fundraising-section p {
+            font-size: 1.25rem;
+            margin-bottom: 3rem;
+            color: rgba(255,255,255,0.9);
+        }
+        
+        .donate-button {
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            color: #0f172a;
+            padding: 1.5rem 3.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 0.025em;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 30px rgba(251,191,36,0.3);
+            border: none;
+            display: inline-block;
+        }
+        
+        .donate-button:hover {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: #fff;
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(15,23,42,0.4);
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #fff;
+            text-align: center;
+            padding: 4rem 0 3rem 0;
             border-top-left-radius: 40px;
             border-top-right-radius: 40px;
-            box-shadow: 0 -4px 24px rgba(30,41,59,0.10);
+            position: relative;
         }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(251,191,36,0.5), transparent);
+        }
+        
         .contact-info {
-            margin-top: 1rem;
+            margin-top: 2rem;
         }
+        
         .contact-info p {
-            margin: 0.5rem 0;
+            margin: 0.75rem 0;
             font-weight: 500;
+            color: rgba(255,255,255,0.9);
         }
+        
+        /* Responsive Design */
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
+            .container {
+                padding: 0 20px;
             }
+            
             nav ul {
                 flex-direction: column;
                 align-items: center;
+                gap: 0.25rem;
             }
-            nav li {
-                margin: 0.5rem 0;
+            
+            .hero {
+                min-height: 60vh;
             }
-            .hero-content h2 {
-                font-size: 2rem;
-            }
-            .section h2 {
-                font-size: 2rem;
-            }
-            .video-grid {
+            
+            .info-grid {
                 grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .carousel-wrapper {
+                margin: 0 -20px;
+                border-radius: 0;
             }
         }
-    </style>
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Loading animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        .fade-in:nth-child(2) { animation-delay: 0.1s; }
+        .fade-in:nth-child(3) { animation-delay: 0.2s; }
+        .fade-in:nth-child(4) { animation-delay: 0.3s; }
+        </style>
 </head>
 <body>
     <header>
