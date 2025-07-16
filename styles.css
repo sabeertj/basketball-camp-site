@@ -7,8 +7,8 @@
 body, p, li {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     line-height: 1.6;
-    color: #0f172a;
-    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    color: #111;
+    background: #fff;
     overflow-x: hidden;
 }
         
@@ -25,12 +25,8 @@ h1, h2, h3, h4, nav, .cta-button {
         
 /* Modern Header */
 header {
-    background: linear-gradient(135deg, rgba(15,23,42,0.95) 0%, rgba(30,41,59,0.95) 100%), 
-                url('https://static.vecteezy.com/system/resources/previews/024/553/073/large_2x/basketball-court-background-3d-illustration-generative-ai-free-photo.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    color: #fff;
+    background: #000;
+    color: #ffd600;
     padding: 4rem 0 3rem 0;
     text-align: center;
     position: relative;
@@ -79,6 +75,14 @@ header p {
     animation: fadeInUp 1s ease-out 0.2s both;
 }
         
+header h1, header p {
+    color: #ffd600;
+    background: none;
+    -webkit-text-fill-color: initial;
+    -webkit-background-clip: initial;
+    background-clip: initial;
+}
+        
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -91,59 +95,64 @@ header p {
 }
         
 /* Modern Navigation */
-nav {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-    box-shadow: 0 4px 24px rgba(15,23,42,0.10);
-    border-radius: 0 0 24px 24px;
+nav.main-nav {
+    background: #000;
+    box-shadow: none;
+    border-radius: 0;
     padding: 1.25rem 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 2px solid #fbbf24;
+    border-bottom: 2px solid #ffd600;
 }
         
-nav ul {
+.nav-list {
     list-style: none;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 0.5rem;
+    margin: 0;
+    padding: 0;
 }
         
-nav a {
-    color: #fff !important;
+.nav-link {
+    color: #ffd600 !important;
     font-family: 'Bebas Neue', sans-serif;
     font-weight: 700;
     font-size: 1.15rem;
     letter-spacing: 0.04em;
-    text-shadow: 0 2px 8px rgba(15,23,42,0.18);
+    text-shadow: none;
     padding: 0.75rem 2rem;
-    border-radius: 16px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 0;
+    background: none;
+    border: none;
+    transition: color 0.2s, border-bottom 0.2s;
     position: relative;
     overflow: hidden;
+    text-transform: uppercase;
 }
         
-nav a::after {
+.nav-link::after {
     content: '';
     display: block;
     height: 3px;
     width: 0;
-    background: linear-gradient(90deg, #fbbf24, #f59e0b);
+    background: #ffd600;
     border-radius: 2px;
     transition: width 0.3s;
     position: absolute;
     left: 50%;
-    bottom: 10px;
+    bottom: 8px;
     transform: translateX(-50%);
 }
         
-nav a:hover, nav a:focus {
-    color: #fbbf24 !important;
-    background: rgba(251,191,36,0.08);
+.nav-link:hover, .nav-link:focus {
+    color: #fff200 !important;
+    background: none;
 }
         
-nav a:hover::after, nav a:focus::after {
+.nav-link:hover::after, .nav-link:focus::after {
     width: 60%;
 }
         
@@ -249,13 +258,25 @@ nav a:hover::after, nav a:focus::after {
     position: relative;
 }
         
-.modern-section h2 {
-    text-align: center;
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    margin-bottom: 1rem;
-    color: #0f172a;
+.section-title, h2, h3, h4 {
+    color: #111;
+    font-family: 'Bebas Neue', sans-serif;
     font-weight: 800;
-    letter-spacing: -0.02em;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    background: none;
+    -webkit-text-fill-color: initial;
+    -webkit-background-clip: initial;
+    background-clip: initial;
+}
+
+header .section-title, header h1, header h2, header h3, header h4, nav .nav-link {
+    color: #ffd600 !important;
+}
+
+.modern-section, .section-photos, .section-videos, .section-support {
+    background: #fff;
+    color: #111;
 }
         
 .modern-section .subtitle {
@@ -502,11 +523,11 @@ nav a:hover::after, nav a:focus::after {
         
 /* Fundraising Section */
 .fundraising-section {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-    color: #fff;
+    background: #fff;
+    color: #111;
     text-align: center;
     padding: 6rem 0;
-    border-radius: 40px;
+    border-radius: 0;
     margin: 4rem 0;
     position: relative;
     overflow: hidden;
@@ -543,35 +564,34 @@ nav a:hover::after, nav a:focus::after {
 }
         
 .donate-button {
-    background: linear-gradient(135deg, #fbbf24, #f59e0b);
-    color: #0f172a;
+    background: #ffd600;
+    color: #000;
     padding: 1.5rem 3.5rem;
     text-decoration: none;
     border-radius: 50px;
     font-size: 1.25rem;
     font-weight: 700;
     letter-spacing: 0.025em;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 10px 30px rgba(251,191,36,0.3);
+    transition: background 0.3s, color 0.3s;
+    box-shadow: none;
     border: none;
     display: inline-block;
+    text-transform: uppercase;
 }
         
 .donate-button:hover {
-    background: linear-gradient(135deg, #0f172a, #1e293b);
-    color: #fff;
-    transform: translateY(-4px) scale(1.05);
-    box-shadow: 0 20px 40px rgba(15,23,42,0.4);
+    background: #000;
+    color: #ffd600;
 }
         
 /* Footer */
 footer {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-    color: #fff;
+    background: #000;
+    color: #ffd600;
     text-align: center;
     padding: 4rem 0 3rem 0;
-    border-top-left-radius: 40px;
-    border-top-right-radius: 40px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
     position: relative;
 }
         
@@ -583,6 +603,10 @@ footer::before {
     right: 0;
     height: 1px;
     background: linear-gradient(90deg, transparent, rgba(251,191,36,0.5), transparent);
+}
+        
+footer .section-title, footer h3 {
+    color: #ffd600;
 }
         
 .contact-info {
