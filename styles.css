@@ -92,13 +92,14 @@ header p {
         
 /* Modern Navigation */
 nav {
-    background: rgba(15,23,42,0.98);
-    backdrop-filter: blur(20px);
-    padding: 1rem 0;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    box-shadow: 0 4px 24px rgba(15,23,42,0.10);
+    border-radius: 0 0 24px 24px;
+    padding: 1.25rem 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 2px solid #fbbf24;
 }
         
 nav ul {
@@ -111,37 +112,39 @@ nav ul {
         
 nav a {
     color: #fff !important;
-    text-shadow: 0 1px 4px rgba(0,0,0,0.25);
-    text-decoration: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 12px;
-    font-weight: 500;
-    font-size: 0.95rem;
-    letter-spacing: 0.025em;
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    letter-spacing: 0.04em;
+    text-shadow: 0 2px 8px rgba(15,23,42,0.18);
+    padding: 0.75rem 2rem;
+    border-radius: 16px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
 }
         
-nav a::before {
+nav a::after {
     content: '';
+    display: block;
+    height: 3px;
+    width: 0;
+    background: linear-gradient(90deg, #fbbf24, #f59e0b);
+    border-radius: 2px;
+    transition: width 0.3s;
     position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,179,0,0.2), transparent);
-    transition: left 0.5s;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
 }
         
-nav a:hover::before {
-    left: 100%;
+nav a:hover, nav a:focus {
+    color: #fbbf24 !important;
+    background: rgba(251,191,36,0.08);
 }
         
-nav a:hover {
-    background: rgba(255,179,0,0.1);
-    color: #fbbf24;
-    transform: translateY(-2px);
+nav a:hover::after, nav a:focus::after {
+    width: 60%;
 }
         
 /* Hero Section */
