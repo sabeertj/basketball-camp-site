@@ -162,6 +162,7 @@ nav .container {
     line-height: 1.2;
     max-width: 700px;
     word-break: break-word;
+    white-space: nowrap;
 }
 
 .section-title {
