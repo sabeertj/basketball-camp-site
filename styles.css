@@ -694,7 +694,7 @@ nav .container {
 .mission-section .container {
     max-width: 900px;
     margin: 0 auto;
-    padding: 0 24px 0 2.5rem;
+    padding: 0 24px 0 1rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
