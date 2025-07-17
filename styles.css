@@ -92,11 +92,8 @@ nav .container {
 
 .mission-section {
     position: relative;
-    background: var(--white) url('images/logos/Athlete.png') no-repeat right 2.5rem center;
-    background-size: 200px auto;
-    background-blend-mode: lighten;
+    background: var(--white);
     overflow: hidden;
-    filter: contrast(2) brightness(0.3) grayscale(1);
 }
 .mission-section::before {
     content: '';
