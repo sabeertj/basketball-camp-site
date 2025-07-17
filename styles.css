@@ -12,7 +12,7 @@ body, p, li {
     overflow-x: hidden;
 }
         
-h1, h2, h3, h4, nav, .cta-button {
+h1, h2, h3, h4, .cta-button {
     font-family: 'Bebas Neue', sans-serif;
     letter-spacing: 0.03em;
 }
@@ -206,10 +206,6 @@ header h1, header p {
     -webkit-text-fill-color: initial;
     -webkit-background-clip: initial;
     background-clip: initial;
-}
-
-header .section-title, header h1, header h2, header h3, header h4, nav .nav-link {
-    color: #ffd600 !important;
 }
 
 .modern-section, .section-photos, .section-videos, .section-support {
@@ -606,3 +602,28 @@ html {
 .fade-in:nth-child(2) { animation-delay: 0.1s; }
 .fade-in:nth-child(3) { animation-delay: 0.2s; }
 .fade-in:nth-child(4) { animation-delay: 0.3s; } 
+nav, .main-nav, .nav-list, .nav-link {
+    all: unset;
+    display: block;
+}
+nav ul, .nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+}
+nav li {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+nav a, .nav-link {
+    color: inherit;
+    text-decoration: none;
+    font: inherit;
+    background: none;
+    padding: 0;
+    margin: 0;
+    border: none;
+    box-shadow: none;
+} 
