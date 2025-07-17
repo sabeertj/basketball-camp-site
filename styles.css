@@ -221,14 +221,25 @@ header h1, header p {
     font-weight: 400;
 }
 
+.section-title {
+    text-align: center;
+}
+
+.modern-section .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 /* About Us Section */
 .about-content {
     max-width: 800px;
     margin: 0 auto;
+    text-align: center;
 }
 
 .about-text {
-    text-align: left;
+    text-align: center;
     line-height: 1.8;
 }
 
