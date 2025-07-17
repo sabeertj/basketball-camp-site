@@ -361,6 +361,21 @@ footer .section-title, footer h3 {
 }
 @media (max-width: 900px) {
     .mission-flex {
+        gap: 1.5rem;
+    }
+    .mission-title {
+        font-size: 3.5rem;
+        margin-bottom: 0.7rem;
+    }
+    .mission-subtitle {
+        font-size: 1.7rem;
+    }
+    .mission-athlete-image {
+        max-width: 180px;
+    }
+}
+@media (max-width: 600px) {
+    .mission-flex {
         flex-direction: column;
         align-items: flex-start;
     }
@@ -369,5 +384,11 @@ footer .section-title, footer h3 {
         width: 100%;
         max-width: 320px;
         align-self: center;
+    }
+    .mission-title {
+        font-size: 2.2rem;
+    }
+    .mission-subtitle {
+        font-size: 1.1rem;
     }
 } 
