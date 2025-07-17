@@ -96,6 +96,7 @@ nav .container {
     background-size: 200px auto;
     background-blend-mode: lighten;
     overflow: hidden;
+    filter: contrast(2) brightness(0.3) grayscale(1);
 }
 .mission-section::before {
     content: '';
@@ -108,6 +109,7 @@ nav .container {
 .mission-section .container {
     position: relative;
     z-index: 2;
+    padding-left: 3rem;
 }
 .mission-title {
     font-size: 5.6rem;
@@ -349,5 +351,8 @@ footer .section-title, footer h3 {
     .mission-section {
         background-size: 100px auto;
         background-position: center 80%;
+    }
+    .mission-section .container {
+        padding-left: 1rem;
     }
 } 
