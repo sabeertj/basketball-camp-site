@@ -602,28 +602,51 @@ html {
 .fade-in:nth-child(2) { animation-delay: 0.1s; }
 .fade-in:nth-child(3) { animation-delay: 0.2s; }
 .fade-in:nth-child(4) { animation-delay: 0.3s; } 
-nav, .main-nav, .nav-list, .nav-link {
-    all: unset;
-    display: block;
+
+/* Modern horizontal navigation bar styling */
+nav.main-nav {
+    background: #ffd600;
+    padding: 0.5rem 0;
+    width: 100%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
-nav ul, .nav-list {
+
+nav .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.nav-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
     list-style: none;
-    padding: 0;
-    margin: 0;
-    display: block;
-}
-nav li {
-    display: block;
     margin: 0;
     padding: 0;
 }
-nav a, .nav-link {
-    color: inherit;
+
+.nav-list li {
+    display: flex;
+}
+
+.nav-link {
+    color: #111;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 1.15rem;
+    font-weight: 600;
     text-decoration: none;
-    font: inherit;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
     background: none;
-    padding: 0;
-    margin: 0;
     border: none;
-    box-shadow: none;
+    outline: none;
+}
+
+.nav-link:hover, .nav-link:focus {
+    background: #fffbe6;
+    color: #000;
 } 
