@@ -220,6 +220,27 @@ header h1, header p {
     margin-bottom: 4rem;
     font-weight: 400;
 }
+
+/* About Us Section */
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-text {
+    text-align: left;
+    line-height: 1.8;
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: #475569;
+}
+
+.about-text p:last-child {
+    margin-bottom: 0;
+}
         
 /* About Section Cards */
 .about-grid {
