@@ -700,7 +700,7 @@ nav .container {
     align-items: flex-start;
 }
 .mission-title {
-    font-size: 5.6rem;
+    font-size: 4.2rem;
     font-weight: 900;
     color: #111;
     margin-bottom: 1.2rem;
@@ -710,7 +710,7 @@ nav .container {
     line-height: 1.05;
 }
 .mission-subtitle {
-    font-size: 2.2rem;
+    font-size: 2rem;
     color: #fbbf24;
     font-weight: 700;
     margin-bottom: 1.5rem;
