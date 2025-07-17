@@ -20,7 +20,7 @@ body {
 header {
     background: linear-gradient(120deg, var(--deep-black) 60%, var(--accent-gold) 100%);
     color: var(--primary-yellow);
-    padding: 2rem 0 1.5rem 0;
+    padding: 2.2rem 0 1.65rem 0;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -90,7 +90,75 @@ nav .container {
     transform: scale(1.07);
 }
 
+/* Bouncing Basketball Animation */
+.bouncing-basketball-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 180px;
+    pointer-events: none;
+    z-index: 10;
+}
+.bouncing-basketball {
+    position: absolute;
+    right: 0;
+    top: 40px;
+    width: 80px;
+    height: 80px;
+    z-index: 11;
+    animation: basketball-bounce-move 3s cubic-bezier(0.68, -0.55, 0.27, 1.55) 1;
+}
+@keyframes basketball-bounce-move {
+    0% {
+        right: -100px;
+        top: 40px;
+        transform: scaleY(1) scaleX(1) rotate(0deg);
+    }
+    10% {
+        top: 120px;
+        transform: scaleY(0.7) scaleX(1.2) rotate(36deg);
+    }
+    20% {
+        top: 40px;
+        transform: scaleY(1) scaleX(1) rotate(72deg);
+    }
+    30% {
+        top: 100px;
+        transform: scaleY(0.8) scaleX(1.1) rotate(108deg);
+    }
+    40% {
+        top: 40px;
+        transform: scaleY(1) scaleX(1) rotate(144deg);
+    }
+    50% {
+        top: 80px;
+        transform: scaleY(0.9) scaleX(1.05) rotate(180deg);
+    }
+    60% {
+        top: 40px;
+        transform: scaleY(1) scaleX(1) rotate(216deg);
+    }
+    70% {
+        top: 60px;
+        transform: scaleY(0.95) scaleX(1.02) rotate(252deg);
+    }
+    80% {
+        top: 40px;
+        transform: scaleY(1) scaleX(1) rotate(288deg);
+    }
+    90% {
+        top: 50px;
+        transform: scaleY(0.98) scaleX(1.01) rotate(324deg);
+    }
+    100% {
+        right: 60vw;
+        top: 40px;
+        transform: scaleY(1) scaleX(1) rotate(360deg);
+    }
+}
 .mission-section {
+    position: relative;
     width: 100%;
     background: var(--white);
     margin-top: 3.5rem;
