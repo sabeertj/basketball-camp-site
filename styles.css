@@ -93,11 +93,9 @@ nav .container {
 
 .mission-section {
     width: 100%;
-    background: var(--white);
+    background: linear-gradient(120deg, #fffbe6 0%, #ffd600 100%, #fbbf24 120%);
     margin-top: 3.5rem;
     margin-bottom: 3.5rem;
-    box-shadow: 0 4px 32px rgba(30,41,59,0.06);
-    border-radius: 32px;
 }
 .mission-section .container {
     max-width: 900px;
