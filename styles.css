@@ -36,7 +36,6 @@ header img {
     object-fit: contain;
     border-radius: 32px;
     box-shadow: 0 2px 24px rgba(0,0,0,0.10);
-    background: var(--white);
     margin-bottom: 0.5rem;
 }
 
