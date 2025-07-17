@@ -92,12 +92,9 @@ nav .container {
 
 .mission-section {
     position: relative;
-    width: 100%;
-    background: var(--white);
-    margin-top: 3.5rem;
-    margin-bottom: 3.5rem;
-    box-shadow: 0 4px 32px rgba(30,41,59,0.06);
-    border-radius: 32px;
+    background: var(--white) url('images/logos/Athlete.png') no-repeat right center;
+    background-size: 320px auto;
+    background-blend-mode: lighten;
 }
 .mission-section .container {
     max-width: 900px;
@@ -339,30 +336,14 @@ footer .section-title, footer h3 {
     transform: scale(1.2);
 } 
 
-.mission-athlete-image {
-    width: 180px;
-    max-width: 30vw;
-    height: auto;
-    border-radius: 24px;
-    box-shadow: 0 4px 24px rgba(30,41,59,0.10);
-    background: transparent;
-    object-fit: contain;
-    display: block;
-}
 @media (max-width: 900px) {
-    .mission-athlete-image {
-        max-width: 180px;
+    .mission-section {
+        background-size: 180px auto;
     }
 }
 @media (max-width: 600px) {
-    .container[style*="display: flex"] {
-        flex-direction: column !important;
-        align-items: flex-start !important;
-    }
-    .mission-athlete-image {
-        margin: 2rem 0 0 0;
-        width: 100%;
-        max-width: 320px;
-        align-self: center;
+    .mission-section {
+        background-size: 100px auto;
+        background-position: center 80%;
     }
 } 
