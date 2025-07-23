@@ -346,6 +346,40 @@ footer .section-title, footer h3 {
     margin-bottom: 2.5rem;
 }
 
+.about-flex {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 3rem;
+    margin-top: 2.5rem;
+}
+.about-content {
+    flex: 1 1 50%;
+    max-width: 50%;
+}
+.about-images {
+    flex: 1 1 50%;
+    max-width: 50%;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+@media (max-width: 900px) {
+    .about-flex {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .about-content, .about-images {
+        max-width: 100%;
+        width: 100%;
+    }
+    .about-images {
+        min-height: 200px;
+    }
+}
+
 @media (max-width: 900px) {
     .mission-section {
         background-size: 180px auto;
