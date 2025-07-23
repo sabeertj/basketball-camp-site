@@ -339,6 +339,13 @@ footer .section-title, footer h3 {
     transform: scale(1.2);
 } 
 
+.about-cofounder {
+    margin-top: 3.5rem;
+}
+.about-cofounder-text {
+    margin-bottom: 2.5rem;
+}
+
 @media (max-width: 900px) {
     .mission-section {
         background-size: 180px auto;
