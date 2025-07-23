@@ -251,6 +251,8 @@ footer .section-title, footer h3 {
 .carousel-container {
     position: relative;
     height: 400px;
+    min-height: 400px;
+    max-height: 400px;
 }
 .carousel-slide {
     position: absolute;
@@ -273,10 +275,11 @@ footer .section-title, footer h3 {
 }
 .carousel-slide img {
     width: 100%;
-    height: 300px;
+    height: 100%;
     object-fit: cover;
     border-radius: 24px 24px 0 0;
     box-shadow: 0 4px 24px rgba(30,41,59,0.10);
+    display: block;
 }
 .carousel-caption {
     padding: 1.5rem;
